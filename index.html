@@ -241,23 +241,42 @@
     <!-- typewriting js -->
     <script src="typewriting-master/typewriting.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', (event) => {
+      document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.img-modal').forEach(item => {
           item.addEventListener('click', event => {
-            event.preventDefault(); // Prevents the link from directing to its href value
-            const imgSrc = item.children[0].src; // Gets the source of the clicked image
-            const modal = document.createElement('div'); // Creates a new div element for the modal
-            modal.setAttribute('class', 'img-overlay'); // Sets a class for the modal
-            modal.innerHTML = `<img src="${imgSrc}" style="width: 100%; height: auto;">`; // Inserts an img element into the modal
-            document.body.appendChild(modal); // Adds the modal to the body of the document
-            
-            // Close the modal on click
-            modal.addEventListener('click', () => {
-              modal.remove(); // Removes the modal from the document
+            event.preventDefault(); // Prevents the link from navigating.
+            const imgSrc = item.children[0].src;
+      
+            // Creating the modal overlay
+            const modal = document.createElement('div');
+            modal.setAttribute('class', 'img-overlay');
+      
+            // Adding an 'X' button to close the modal
+            const closeButton = document.createElement('div');
+            closeButton.innerHTML = '&#x2715;'; // X symbol
+            closeButton.setAttribute('class', 'close-button');
+      
+            // Inserting the image and close button into the modal
+            modal.innerHTML = `<img src="${imgSrc}" style="max-width: 80%; max-height: 80%; margin: 20px;">`;
+            modal.appendChild(closeButton);
+      
+            document.body.appendChild(modal);
+      
+            // Function to remove the modal
+            const removeModal = () => modal.remove();
+      
+            // Close the modal when the 'X' is clicked
+            closeButton.addEventListener('click', removeModal);
+      
+            // Optional: Also close the modal if the user clicks outside the image
+            modal.addEventListener('click', event => {
+              if (event.target === modal) {
+                removeModal();
+              }
             });
           });
         });
       });
-      </script>      
+      </script>        
   </body>
 </html>
