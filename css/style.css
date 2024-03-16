@@ -419,3 +419,16 @@ h3 {
   justify-items: center; /* Center-align items horizontally */
   gap: 20px; /* Adjust gap between items as needed */
 }
+
+.img-overlay {
+  position: fixed; /* Position the modal fixed over the content */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  z-index: 1000; /* Ensure it's above other content */
+}

@@ -155,13 +155,13 @@
             </div>
 
             <div class="portfolio-grid grid">
-              <div><img src="images/work-1.1.jpg" /></div>
-              <div><img src="images/work-2.2.jpg" /></div>
-              <div><img src="images/work-3.3.jpg" /></div>
-              <div><img src="images/work-4.4.jpg" /></div>
-              <div><img src="images/work-5.5.jpg" /></div>
-              <div><img src="images/work-6.6.jpg" /></div>
-              <div><img src="images/work-7.jpg" /></div>
+              <div><a href="#" class="img-modal"><img src="images/work-1.1.jpg" alt="Work 1" /></a></div>
+              <div><a href="#" class="img-modal"><img src="images/work-2.2.jpg" alt="Work 2" /></a></div>
+              <div><a href="#" class="img-modal"><img src="images/work-3.3.jpg" alt="Work 3" /></a></div>
+              <div><a href="#" class="img-modal"><img src="images/work-4.4.jpg" alt="Work 4" /></a></div>
+              <div><a href="#" class="img-modal"><img src="images/work-5.5.jpg" alt="Work 5" /></a></div>
+              <div><a href="#" class="img-modal"><img src="images/work-6.6.jpg" alt="Work 6" /></a></div>
+              <div><a href="#" class="img-modal"><img src="images/work-7.jpg" alt="Work 7" /></a></div>
             </div>
           </div>
         </div>
@@ -240,5 +240,24 @@
 
     <!-- typewriting js -->
     <script src="typewriting-master/typewriting.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('.img-modal').forEach(item => {
+          item.addEventListener('click', event => {
+            event.preventDefault(); // Prevents the link from directing to its href value
+            const imgSrc = item.children[0].src; // Gets the source of the clicked image
+            const modal = document.createElement('div'); // Creates a new div element for the modal
+            modal.setAttribute('class', 'img-overlay'); // Sets a class for the modal
+            modal.innerHTML = `<img src="${imgSrc}" style="width: 100%; height: auto;">`; // Inserts an img element into the modal
+            document.body.appendChild(modal); // Adds the modal to the body of the document
+            
+            // Close the modal on click
+            modal.addEventListener('click', () => {
+              modal.remove(); // Removes the modal from the document
+            });
+          });
+        });
+      });
+      </script>      
   </body>
 </html>
