@@ -79,7 +79,7 @@ h3 {
 /* header */
 #header {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("../images/nast1.JPG") center/cover no-repeat fixed;
+    url("../images/nastya-1.jpg") center/cover no-repeat fixed;
   justify-content: flex-start;
   align-items: flex-end;
 }
@@ -161,7 +161,7 @@ h3 {
 /* work */
 #work {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("../images/nast3.JPG") center/cover no-repeat fixed;
+    url("../images/nastya-3.jpg") center/cover no-repeat fixed;
   color: var(--light-color);
 }
 #work .title h2,
@@ -284,12 +284,21 @@ h3 {
 .footer-content > div:first-child {
   margin-bottom: 3rem;
 }
-.footer-content > div:first-child div {
+/* .footer-content > div:first-child div {
   width: 100px;
   height: 100px;
   overflow: hidden;
   margin: 5rem auto;
   border-radius: 50%;
+} */
+
+.footer-content > div:first-child div img {
+  width: 700px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 5rem auto;
+  overflow: hidden;
 }
 
 /* Media Queries */
