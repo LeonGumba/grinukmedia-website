@@ -408,3 +408,14 @@ h3 {
   height: auto; /* Maintain aspect ratio */
   max-height: 400px; /* Adjust based on your preference for size */
 }
+
+.icon {
+  filter: invert(1);
+}
+
+.work-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; /* Center-align items horizontally */
+  gap: 20px; /* Adjust gap between items as needed */
+}
