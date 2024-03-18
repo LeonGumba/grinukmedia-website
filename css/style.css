@@ -456,3 +456,22 @@ h3 {
   object-fit: contain;
   margin: 20px;
 }
+
+.video-link-container {
+  text-align: center; /* center-aligns the text */
+  margin-top: 20px; /* adds some space between the videos and the text */
+  font-size: 4rem; /* adjusts the size of the text, if needed */
+}
+
+.video-link-container a {
+  color: #007bff; /* sets the link color */
+  text-decoration: none; /* optional: removes underline from the link */
+}
+
+.video-link-container a:hover {
+  text-decoration: underline; /* optional: adds underline on hover for better UX */
+}
+
+.video-link-container p {
+  color: #ffffff;
+}
